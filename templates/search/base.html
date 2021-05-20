@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/jquery.dataTables.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/jquery.tipTip.css' %}">
+    <!-- <link rel="stylesheet" type = "text/css" href="{% static 'css/dataTables.jqueryui.min.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/scroller.jqueryui.min.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/jquery-ui.css' %}"> -->
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/style.css' %}">
+    <title>EO-WEF Tool</title>
+</head>
+
+<body>
+
+
+    <div id='container'>
+
+        <div id="header">
+            <h1> EO-WEF Tool  </h1>
+        </div>
+
+        <div id="content">
+            <div id="nav"> 
+                <ul class="">
+                    <li class="{% block menu_item_index %}{% endblock %}"><a class="nav-link pr-5 active" href="{% url 'index' %}">What is EO-WEF?</a> </li>
+                    <li class="{% block menu_item_get_started %}{% endblock %}"><a class="nav-link pr-5" href="{% url 'get_started' %}">Get started</a></li>
+                    <li class="{% block menu_item_search_data %}{% endblock %}"><a class="nav-link pr-5" href="{% url 'search_data' %}">Search data</a></li>
+                    <li class=""><a class="nav-link pr-5" href=http://127.0.0.1:8000/apps/earth-engine/ target="_blank">Retrieve data</a></li>
+                    <li class="{% block menu_item_credits %}{% endblock %}"><a class="nav-link pr-5" href="{% url 'credits' %}" >Credits</a></li>
+                    <li class="{% block menu_item_contact %}{% endblock %}"><a class="nav-link pr-5" href="{% url 'contact' %}" >Contact</a></li>
+                </ul>
+            </div>
+            {% block body %}
+        
+            {% endblock %}
+        </div>
+
+        <div id="footer">
+            Copyright &copy; 2020 UKZN
+        </div>
+</div>
+
+
+
+</body>
+
+
+<!-- <scrip src= "{% static 'js/bootstrap.min.js' %}"> </script> -->
+<!-- <script src= "{% static 'js/popper.js' %}"> </script> -->
+<script src= "{% static 'js/jquery-3.6.0.js' %}"> </script>
+<script src= "{% static 'js/jquery.dataTables.js' %}"> </script>
+<script src= "{% static 'js/jquery.tipTip.minified.js' %}"> </script>
+<!-- <script src= "{% static 'js/dataTables.jqueryui.min.js' %}"> </script>
+<script src= "{% static 'js/dataTables.scroller.min.js' %}"> </script> -->
+<script src= "{% static 'js/script.js' %}"> </script>
+ 
+</html>

@@ -1,0 +1,88 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//fonts.googleapis.com/css?family=Ropa Sans&subset=latin" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab&subset=latin" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Roboto Condensed&subset=latin" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/jquery.dataTables.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/jquery.tipTip.css' %}">
+    <!-- <link rel="stylesheet" type = "text/css" href="{% static 'css/dataTables.jqueryui.min.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/scroller.jqueryui.min.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/jquery-ui.css' %}"> -->
+
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/style.css' %}">
+
+    <title>{% block title %} eowef - home {% endblock %}</title>
+    <!-- <title>Document</title> -->
+</head>
+<body>
+    <div class="container-fluid my-container">
+
+        <!-- Header -->
+          <div class="row stiky-top my-row-header" id="header">
+            <div class="col" id='header-font'>
+                EO-WEF
+            </div>
+        </div>
+
+        <div class="row my-row-body" >
+            <div class="col-md-2 my-col" id="nav"> 
+                <ul class="">
+                    <li class="{% block menu_item_index %}{% endblock %}"><a class="nav-link pr-5 active" href="{% url 'index' %}">HOME</a> </li>
+                    <li class="{% block menu_item_get_started %}{% endblock %}"><a class="nav-link pr-5" href="{% url 'get_started' %}">GET STARTED</a></li>
+                    <li class="{% block menu_item_search_data %}{% endblock %}"><a class="nav-link pr-5" href="{% url 'search_data' %}">DATA</a></li>
+                    <li class=""><a class="nav-link pr-5" href=http://13.58.46.211/apps/earth-engine/ target="_blank">MAP</a></li>
+                    <li class="{% block menu_item_credits %}{% endblock %}"><a class="nav-link pr-5" href="{% url 'credits' %}" >CREDITS</a></li>
+                    <li class="{% block menu_item_contact %}{% endblock %}"><a class="nav-link pr-5" href="{% url 'contact' %}" >CONTACT</a></li>
+                </ul>
+            </div>
+           
+            <div class="col-md-10 my-col1">
+            {% block body %}
+            
+                
+            
+            {% endblock %}
+            </div>
+        </div>
+        
+
+        <!-- footer -->
+        <div class="row my-row-footer fixed-bottom">
+            <div class="col footer-p"> 
+                Powered by  <a href="https://earthengine.google.com/" target="_blank"> <i style="color:#2980b9">Google earth engine</i> </a> and
+                <a href="https://www.tethysplatform.org/" target="_blank"> <i style="color:#2980b9">Tethys Platform</i>  </a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+<!-- <scrip src= "{% static 'js/bootstrap.min.js' %}"> </script> -->
+<!-- <script src= "{% static 'js/popper.js' %}"> </script> -->
+<script src= "{% static 'js/jquery-3.6.0.js' %}"> </script>
+<script src= "{% static 'js/jquery.dataTables.js' %}"> </script>
+<script src= "{% static 'js/jquery.tipTip.minified.js' %}"> </script>
+<!-- <script src= "{% static 'js/dataTables.jqueryui.min.js' %}"> </script>
+<script src= "{% static 'js/dataTables.scroller.min.js' %}"> </script> -->
+<script src= "{% static 'js/script.js' %}"> </script>
+</html>

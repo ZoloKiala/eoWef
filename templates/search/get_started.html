@@ -1,0 +1,73 @@
+{% extends 'search/home.html' %}
+{% load static %}
+{% block menu_item_get_started %} active {% endblock %}
+{% block title %} eowef - get-started {% endblock %}
+
+{% block body %} 
+
+
+<h5 class='big-title'> How to use the EO-WEF ?</h5>
+<hr>
+    <p> The <b class = 'sub-title'> EO-WEF </b> app is subdivided into 2 parts: the <a href="{% url 'search_data' %}"> <i style="color:#2980b9; font-weight: bold">search</i> </a> and <a href="http://13.58.46.211/apps/earth-engine/"> <i style="color:#2980b9; font-weight: bold">map</i> </a> sections.</i> </b>  </p>
+    <p> In the <a href="{% url 'search_data' %}"> <i style="color:#2980b9; font-weight: bold">search</i> </a> section,the following steps can be used:</p>
+
+<div class="container">
+<div class="numberCircle">1 </div> Use the search bar to look up in the <b class = 'sub-title'> EO-WEF </b>  database the variable of interest and its sector, satellite (or model)
+                        and product and the availability dates of its data <br> 
+<div class="numberCircle">2 </div> Click the product link(s) to learn about the data associated to the selected variable. <br> 
+<div class="numberCircle">3 </div> Record the information related to the variable. This will help to visualize its data and time series on the map area. <br> 
+</div>
+   
+<img src="{% static '/images/pic1_edited.png' %}"/>
+
+<p> The <a href="http://13.58.46.211/apps/earth-engine/"> <i style="color:#2980b9; font-weight: bold">map</i> </a>  section of the application consists of visualizing the data of
+    the selected variable and retrieving the time series. </p>
+
+<p> The steps are as follows:</p>
+<div class="container">
+<div class="numberCircle">4 </div> Enter the recorded information related to the selected variable. <br> 
+</div>
+
+<img src="{% static '/images/pic2.png' %}"/>
+
+
+<div class="container">
+    <div class="numberCircle">5 </div> Choose the reducer method (e.g. median) to display the image collection for a date range, which should be within the availability dates of the variable data. <br> 
+   
+    <div class="numberCircle">6 </div> Click “load” to display the reduced image collection on the map view area. In contrast, the “clear” button removes the displayed image. <br> 
+ 
+
+    <div class="numberCircle">7 </div> To plot the time series of the variable data for the selected date range at a location, use the draw tool menu on the map view area, drop a point or draw a polygon and click the “Plot AOI” button. <br> 
+
+
+    <div class="numberCircle">8 </div> To customize the visualization of images to a specific area, use the “set boundary” button to upload your own shapefile. <br> 
+
+</div>
+
+<img src="{% static '/images/pic5.png' %}"/>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}
