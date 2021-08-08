@@ -1,84 +1,41 @@
-{% extends 'search/home.html' %}
-{% block menu_item_contact %} active {% endblock %}
-{% load static %}
+{% extends 'search/base.html' %}
+{% load crispy_forms_tags %}
+<!-- {% block menu_item_get_started %} active {% endblock %} -->
 {% block title %} eowef - contact {% endblock %}
+
 {% block body %} 
+    <!-- sidebar end -->
+    <!-- main conatiner  start -->
 
+    <!-- main conatiner  end -->
+        <div class="card1">
+        
+            <h1>Contact Us</h1>
+            <hr>
+            {% if name %}
+            <center>
+                <h2>Thanks {{ name }}</h2>
+                <p>We have received your email and will respond shortly.</p>
+            </center>
+            <br><br>
 
-    <h5 class='big-title'> Let us know what you think about the EO-WEF Tool Application or report any issues or bugs you encounter.</h5>
-    <hr>
-    
-    <div class='row'>
-        <div class='col-md-8'>
-            <form class="form-contact contact_form" action="{% url 'contact' %}" method="post" id="contactForm"
-                novalidate="novalidate">
-                {% csrf_token %}
+            {% else %}
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group">
-                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Enter Message"></textarea>
+            <div class='container h-100'>
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-10 col-md-8 col-lg-6">
+                        <div class="border p-3 shadow">
+                            <form method='post'>
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                                <div class="form-actions">
+                                        <button type='submit' class='btn btn-success'>Send</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                    <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
-                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                    <input class="form-control" name="email" id="email" type="email" placeholder="Enter email address">
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="form-group">
-                    <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
-                    </div>
-                </div>
-                </div>
-                <div class="form-group mt-2 mb-5 mb-lg-0">
-                    <button type="submit" class="button button-contactForm primary-btn">Send Message</button>
-                </div>
-            </form>
-
-            <br>
-                <h5 style="color:red"> {{ info }}</h5>
+            </div>
         </div>
-
-        <div class='col-md-4'>
-
-            
-                For inquiries about custom research and management applications, please contact principal investigators:
-            
-                <div id ='author'>
-                    <br>
-                    <b class= 'sub-title'>Zolo Kiala</b>, 
-                    Postdoc Researcher, 
-                    Univeristy of KwaZulu-Natal, South Africa
-                    KialaZ@ukzn.ac.za <br>
-                    <a href="https://ukzn.ac.za/"><img src="{% static '/images/UKZN.jpg' %}"/></a>
-                    <br><br>
-                    <b class = 'sub-title'>Nathan Swain</b>,  
-                    Project Engineer, 
-                    Brigham Young University, USA
-                    nswain@aquaveo.com <br>
-                    <a href="https://www.byu.edu/"><img src="{% static '/images/BYU.jpg' %}"/></a>
-                </div>
-       
-
-
-        </div>
-
-    </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-{% endblock %}
+    {% endif %}
+        {% endblock %}

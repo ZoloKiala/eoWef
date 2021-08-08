@@ -1,0 +1,58 @@
+{% extends 'search/base.html' %}
+{% load static %}
+{% load active_link_tags %}
+<!-- {% block menu_item_get_started %} active {% endblock %} -->
+{% block title %} eowef - get_started {% endblock %}
+
+{% block body %} 
+
+
+<div class='card1'>
+    <h1> Available datasets </h1>
+    <hr>
+
+
+<div class='row'>
+    <div class ='col-md-12' style="overflow: auto">
+
+        <table id = "table" class = "table table-striped stripe cell-border nowrap compact" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Sector</th>
+                    <th>Variable</th>
+                    <th>Unit</th>
+                    <th>Satellite or Model</th>
+                    <th>Sensor</th>
+                    <th>Product</th>
+                    <th>Start Date</th>
+                    <th>End Date </th>
+                </tr>
+        
+            </thead>
+            <tbody> 
+                {% for satmodel in all_satmodel %}
+                <tr>
+    
+                <td> {{ satmodel.sector|truncatechars:15 }} </td>
+                <td data-toggle="tooltip" title="{{ satmodel.variable }}"> {{ satmodel.variable|truncatechars:42 }} </td>
+                <td> {{ satmodel.unit }} </td>
+                <td data-toggle="tooltip" title="{{ satmodel.longname }}"> {{ satmodel.shortname }}</td>   
+                <td data-toggle="tooltip" title="{{ satmodel.sensor }}"> {{ satmodel.sensor|truncatechars:15 }} </td>
+                <td > <a href='{{ satmodel.reference }}' data-toggle="tooltip" data-placement="left" title="{{ satmodel.product }}" target="_blank">{{ satmodel.product|truncatechars:42 }} </a>  </td>   
+                <td> {{ satmodel.start_date|date:"SHORT_DATE_FORMAT"  }} </td>
+                <td> {{ satmodel.end_date|date:"SHORT_DATE_FORMAT" }} </td>
+            
+              </tr>
+                {% endfor %}
+        
+            </tbody>
+        
+        </table>
+
+    </div>
+    </div>
+
+</div>
+
+
+{% endblock %}  
