@@ -15,7 +15,7 @@
 
 body{
   background: red;
-  background: url("../images/background1.jpg")no-repeat;
+  background: url("../images/background1.32ad9aa1e82f.jpg")no-repeat;
   background-size: cover;
 }
 
@@ -157,7 +157,7 @@ i { margin: 0 7px; }
   height: 100%;
   transition: all 0.3s;
   margin-top: 50px;
-  /* background: url("../images/background1.jpg")no-repeat;
+  /* background: url("../images/background1.32ad9aa1e82f.jpg")no-repeat;
   background-size: cover; */
   
      
