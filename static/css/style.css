@@ -90,7 +90,7 @@ i { margin: 0 7px; }
   position: fixed;
   top: 70px;
   width: 250px;
-  height: calc(100% - 9%);
+  height: 100%;
   transition: 0.3s;
   transition-property: width;
   overflow-y:auto;
