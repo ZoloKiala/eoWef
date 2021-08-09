@@ -154,7 +154,7 @@ i { margin: 0 7px; }
  
   width: 100%;
   padding: 20px;
-  min-height: 100%;
+  height: 1000px;
   transition: all 0.3s;
   margin-top: 50px;
   /* background: url("../images/background1.jpg")no-repeat;
@@ -204,6 +204,9 @@ i { margin: 0 7px; }
   }
   #logo_p {
     display: none;
+  }
+  .center {
+    margin: 5px;
   }
 }
 
