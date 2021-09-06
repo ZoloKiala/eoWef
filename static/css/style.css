@@ -15,7 +15,7 @@
 
 body{
   background: red;
-  background: url("../images/background1.jpg")no-repeat;
+  background: url("../images/background.jpg")no-repeat;
   background-size: cover;
 }
 
