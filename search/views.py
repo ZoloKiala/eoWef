@@ -1,9 +1,37 @@
 from django.shortcuts import render
-from .models import SatModel, Variables
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 import os
+from rest_framework.generics import ListAPIView
+from rest_framework.viewsets import ModelViewSet
+
+from search.models import Unit, Variable, Sector, SatModel
+from search.serializers import UnitSerializer, VariableSerializer, SectorSerializer,  WriteSatModelSerializer, ReadSatModelSerializer
+
+class UnitListAPIView(ListAPIView):
+    queryset = Unit.objects.all()
+    serializer_class = UnitSerializer
+
+class SectorListAPIView(ListAPIView):
+    queryset = Sector.objects.all()
+    serializer_class = SectorSerializer
+
+class VariableModelViewSet(ModelViewSet):
+    queryset = Variable.objects.all()
+    serializer_class = VariableSerializer
+
+class SatModelModelViewSet(ModelViewSet):
+    queryset = SatModel.objects.all()
+  
+    def get_serializer_class(self):
+        
+        if self.action in ("list", "retrieve"):
+            return ReadSatModelSerializer
+
+        return WriteSatModelSerializer
+    
+
 
 # Create your views here.
 def index(request):

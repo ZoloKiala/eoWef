@@ -32,14 +32,37 @@
                 {% for satmodel in all_satmodel %}
                 <tr>
     
-                <td> {{ satmodel.sector|truncatechars:15 }} </td>
+                <td> {{ satmodel.variable.sector|truncatechars:15 }} </td>
                 <td data-toggle="tooltip" title="{{ satmodel.variable }}"> {{ satmodel.variable|truncatechars:42 }} </td>
-                <td> {{ satmodel.unit }} </td>
-                <td data-toggle="tooltip" title="{{ satmodel.longname }}"> {{ satmodel.shortname }}</td>   
+                <td> {{ satmodel.variable.unit }} </td>
+
+
+                <td data-toggle="tooltip" title="{{ satmodel.satellite_or_model_long }}"> {{ satmodel.satellite_or_model_short }}</td> 
+                {% if satmodel.sensor == '' %}
+                <td> ... </td>
+
+                {% else %}
+
                 <td data-toggle="tooltip" title="{{ satmodel.sensor }}"> {{ satmodel.sensor|truncatechars:15 }} </td>
+
+                {% endif %}
+               
+                
+
                 <td > <a href='{{ satmodel.reference }}' data-toggle="tooltip" data-placement="left" title="{{ satmodel.product }}" target="_blank">{{ satmodel.product|truncatechars:42 }} </a>  </td>   
+                
                 <td> {{ satmodel.start_date|date:"SHORT_DATE_FORMAT"  }} </td>
+
+                {% if satmodel.satellite_or_model_short in 'WAPOR, OpenLandMap' %}
+                <td> On going... </td>
+
+                {% else %}
+
                 <td> {{ satmodel.end_date|date:"SHORT_DATE_FORMAT" }} </td>
+
+                {% endif %}
+
+                
             
               </tr>
                 {% endfor %}

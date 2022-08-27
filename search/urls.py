@@ -8,7 +8,7 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 
 urlpatterns = [
     path('', views.index, name= 'index'),
-    path('search', views.search, name= 'search'),
+    path('search/', views.search, name= 'search'),
     path('get_started/', views.get_started, name= 'get_started'),
     path('credits/', views.credits, name= 'credits'),
     path('contact/', contactView, name= 'contact'),
